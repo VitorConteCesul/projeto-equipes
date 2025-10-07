@@ -1,8 +1,8 @@
 import { Image, Text} from "react-native";
 import logoImg from "@assets/logo.png";
-import { Container} from "./styles";
+import { Container } from "./styles";
 
-export function Groups(){
+export function Teams(){
   return (
     <Container>
       <Text>Groups</Text>

@@ -1,9 +1,13 @@
-import { Groups } from "@screens/Teams";
+import { Teams } from "@screens/Teams";
+import theme from "@theme/index";
+import { ThemeProvider } from "styled-components";
 
 
 export default function App() {
   return (
-    <Groups />
+    <ThemeProvider theme={theme}>
+      <Teams />
+    </ThemeProvider>
   );
 }
 
