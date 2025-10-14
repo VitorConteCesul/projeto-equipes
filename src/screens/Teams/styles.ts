@@ -1,12 +1,17 @@
-import { StyleSheet } from "react-native";
+import { View } from "react-native";
 import styled from "styled-components/native";
 
-  export const Container = styled.View`
+export const Container = styled.View`
   flex: 1;
-  backgroundColor: '#fff';
-  alignItems: center;
-  justifyContent: center;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
-  `;
+  background-color: '#fff';
+`;
 
-  export const Title = styled.Text``
+export const HeaderContainer = styled.View`
+  background-color: ${({ theme }) => theme.COLORS.PURPLE_500};
+  padding-top: 54px;
+  padding-bottom: 24px;
+`;
+
+export const Content = styled(View)`
+  padding: 24px;
+`;

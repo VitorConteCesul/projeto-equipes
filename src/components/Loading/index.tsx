@@ -1,11 +1,9 @@
-import { Container} from "@screens/Teams/styles";
-import { LoadIndicator } from "./styles";
+import { Container, LoadIndicator } from './styles';
 
 export function Loading() {
-  
   return (
     <Container>
       <LoadIndicator />
     </Container>
-  )
+  );
 }
