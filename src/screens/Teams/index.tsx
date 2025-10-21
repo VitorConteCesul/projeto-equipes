@@ -4,9 +4,10 @@ import { Container, Content, HeaderContainer } from './styles';
 
 import { Highlight } from '@components/Highlight';
 import { TeamCard } from '@components/TeamCard';
-import { Button, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { useState } from 'react';
 import { ListEmpty } from '@components/ListEmpty';
+import { Button } from '@components/Button';
 
 export function Teams() {
   const [teams, setTeams] = useState(['Equipe 1']);
@@ -31,7 +32,7 @@ export function Teams() {
           contentContainerStyle={teams.length == 0 && {flex: 1}}
       />
 
-        <Button 
+        <Button
           title="Crie uma nova Equipe"
           
         />
