@@ -2,6 +2,7 @@ import { css } from "styled-components";
 import styled from "styled-components/native";
 
 export const Container = styled.TextInput`
+    flex: 1;
    ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.MD};
     font-weight: ${ theme.FONT_FAMILY.REGULAR};
