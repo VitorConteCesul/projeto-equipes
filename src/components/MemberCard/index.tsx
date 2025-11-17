@@ -18,6 +18,7 @@ export function MemberCard({ name, onRemove }: Props) {
         icon="delete-outline" 
         type="SECONDARY"
         size='SM'
+        borderRadius='RIGHT'
         onPress={onRemove}
       />
     </Container>
