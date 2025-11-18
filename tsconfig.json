@@ -14,9 +14,9 @@
         "./src/routes/*"
       ],
       "@screens/*": [
-        "./src/screens/*"
+        "src/screens/*"
       ],
-       "@storage/*": [
+      "@storage/*": [
         "./src/storage/*"
       ],
       "@theme/*": [

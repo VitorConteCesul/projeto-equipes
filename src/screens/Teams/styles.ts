@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { SafeAreaViewBase, View } from "react-native";
 import styled from "styled-components/native"
 
 export const Container = styled.View`
@@ -10,8 +10,7 @@ export const Container = styled.View`
 
 export const HeaderContainer = styled.View`
     background-color: ${({ theme }) => theme.COLORS.PURPLE_500};
-    padding-top: 54px;
-    padding-bottom: 24px;
+    padding: 24px 0;
 `;
 
 export const Content = styled(View)`

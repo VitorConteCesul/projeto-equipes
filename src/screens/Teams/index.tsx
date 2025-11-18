@@ -1,5 +1,10 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
 import { FlatList } from 'react-native';
+
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
@@ -8,13 +13,35 @@ import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
 
 import { Container, HeaderContainer, Content } from './styles';
+import { fetchAllTeams } from '@storage/team/fetchAllTeams';
 
 export function Teams() {
-  const [teams, setTeams] = useState(['Equipe 1', 'Equipe 2']);
+  const [teams, setTeams] = useState<string[]>([]);
+
+  const navigation = useNavigation();
+
+  const insets = useSafeAreaInsets();
+
+  function handleNewTeam() {
+    navigation.navigate('newTeam');
+  }
+
+  async function handleFetchAllTeams() {
+    try {
+      const data = await fetchAllTeams();
+      setTeams(data);
+    } catch (error) {
+      throw console.log(error);
+    }
+  }
+
+  useFocusEffect(useCallback(() => {
+    handleFetchAllTeams();
+  }, []));
 
   return (
-    <Container>
-      <HeaderContainer>
+    <Container style={{ paddingBottom: insets.bottom }}>
+      <HeaderContainer style={{ paddingTop: insets.top }}>
         <Header />
 
         <Highlight
@@ -36,6 +63,7 @@ export function Teams() {
 
         <Button
           title='Criar uma nova equipe'
+          onPress={handleNewTeam}
         />
       </Content>
     </Container>

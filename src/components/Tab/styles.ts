@@ -5,7 +5,7 @@ export type TabStyleProps = {
   isActive?: boolean;
 }
 
-export const Container = styled(TouchableOpacity) <TabStyleProps>`
+export const Container = styled(TouchableOpacity)<TabStyleProps>`
   ${({ theme, isActive }) => isActive && css`
     border-color: ${theme.COLORS.PURPLE_500};
     border-bottom-width: 1px;

@@ -3,6 +3,8 @@ import styled from "styled-components/native";
 
 export const Container = styled.TextInput`
     flex: 1;
+    max-height: 55px;
+    
    ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.MD};
     font-weight: ${ theme.FONT_FAMILY.REGULAR};

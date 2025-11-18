@@ -7,9 +7,7 @@ type Props = {
 export function Tag({ text }: Props) {
   return (
     <Container>
-      <Text>
-        {text}
-      </Text>
+      <Text>{text}</Text>
     </Container>
   )
 }

@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { FlatList } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
@@ -13,17 +16,26 @@ import { Button } from '@components/Button';
 
 import { Container, HeaderContainer, Content, InputContainer, Tabs } from './styles';
 
+type RouteParams = {
+  team: string;
+}
+
 export function AddMembers() {
   const [tab, setTab] = useState('Titular');
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState(["Vitor"]);
+
+  const insets = useSafeAreaInsets();
+
+  const route = useRoute();
+  const { team } = route.params as RouteParams;
 
   return (
-    <Container>
-      <HeaderContainer>
+    <Container style={{ paddingBottom: insets.bottom }}>
+      <HeaderContainer style={{ paddingTop: insets.top }}>
         <Header showBackButton />
 
         <Highlight
-          title='Equipes 1'
+          title={team}
           subtitle='Adicione os titulares e reservas'
         />
       </HeaderContainer>

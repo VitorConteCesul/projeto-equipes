@@ -6,6 +6,7 @@ import { Loading } from "@components/Loading";
 import { StatusBar } from "react-native";
 import { NewTeam } from "@screens/NewTeam";
 import { AddMembers } from "@screens/AddMembers";
+import { Routes } from "@routes/index";
 
 export default function App(){
   const [fontsLoadead] = useFonts({Roboto_400Regular, Roboto_700Bold});
@@ -17,7 +18,7 @@ export default function App(){
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoadead ? <AddMembers /> : <Loading />}
+      {fontsLoadead ? <Routes /> : <Loading />}
     </ThemeProvider>
   )
 }

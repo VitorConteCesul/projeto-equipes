@@ -14,5 +14,5 @@ export const HeaderContainer = styled.View`
 export const Content = styled.View`
   flex: 1;
   justify-content: space-between;
-  padding: 24px;
+  padding: 24px 24px 0 24px;
 `;
